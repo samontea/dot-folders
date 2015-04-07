@@ -53,3 +53,15 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 alias gitgraphpretty="git log --graph --decorate --abbrev-commit --all --pretty=oneline"
 
 PATH=$PATH:~/.lclbin/executables
+
+# where be the cows
+COWDIR=/usr/share/cowsay/cows/;
+
+# get a nummer
+COWNUM=$(($RANDOM % $(ls $COWDIR | wc -l)));
+
+# choose teh cow
+COWFILE=$(ls $COWDIR | sed -n ''$COWNUM'p');
+
+# teh cow says
+fortune | cowsay -f $COWFILE;
