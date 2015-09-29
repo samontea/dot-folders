@@ -49,13 +49,13 @@ source $ZSH/oh-my-zsh.sh
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-# Alias gitgraphpretty to a git graph command
-alias gitgraphpretty="git log --graph --decorate --abbrev-commit --all --pretty=oneline"
-
 PATH=$PATH:~/.lclbin/executables
 
+PATH=$PATH:/home/sam/.gem/ruby/2.2.0/bin
+PATH=$PATH:~/.lclbin/android-studio/bin
+
 # where be the cows
-COWDIR=/usr/share/cowsay/cows/;
+COWDIR=/usr/share/cows/;
 
 # get a nummer
 COWNUM=$(($RANDOM % $(ls $COWDIR | wc -l)));

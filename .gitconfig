@@ -1,0 +1,7 @@
+[user]
+	name = samontea
+	email = merciers.merciers@gmail.com
+[push]
+	default = simple
+[alias]
+	prettylog = log --graph --decorate --abbrev-commit --all --pretty=oneline
