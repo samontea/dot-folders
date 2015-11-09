@@ -55,7 +55,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:~/.lclbin/executables
 
 PATH=$PATH:/home/sam/.gem/ruby/2.2.0/bin
-PATH=$PATH:~/.lclbin/android-studio/bin
 
 # where be the cows
 COWDIR=/usr/share/cows/;
@@ -68,3 +67,5 @@ COWFILE=$(ls $COWDIR | sed -n ''$COWNUM'p');
 
 # teh cow says
 fortune | cowsay -f $COWFILE;
+
+export PATH=~/pebble-dev/PebbleSDK-3.4/bin:$PATH
