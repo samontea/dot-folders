@@ -45,6 +45,9 @@ plugins=(git)
 # Import oh my zsh
 source $ZSH/oh-my-zsh.sh
 
+# turn on zsh correction
+setopt correct_all
+
 # RVM things
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
