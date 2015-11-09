@@ -60,7 +60,8 @@ PATH=$PATH:/home/sam/.gem/ruby/2.2.0/bin
 COWDIR=/usr/share/cows/;
 
 # get a nummer
-COWNUM=$(($RANDOM % $(ls $COWDIR | wc -l)));
+COWNUM=$(($RANDOM % $(ls $COWDIR | wc -l) + 1));
+
 
 # choose teh cow
 COWFILE=$(ls $COWDIR | sed -n ''$COWNUM'p');
