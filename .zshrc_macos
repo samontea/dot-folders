@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=/data/oh-my-zsh
+ZSH=~/data/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -46,11 +46,10 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # where be the cows
-COWDIR=/usr/share/cows/;
+COWDIR=/usr/local/Cellar/cowsay/3.04/share/cows/;
 
 # get a nummer
 COWNUM=$(($RANDOM % $(ls $COWDIR | wc -l) + 1));
-
 
 # choose teh cow
 COWFILE=$(ls $COWDIR | sed -n ''$COWNUM'p');
