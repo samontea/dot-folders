@@ -1,5 +1,8 @@
-source $HOME/.antigen.zsh
-source $HOME/.antigenrc
+if [ "$FIRSTLOAD" != "LOADED" ];
+then
+   source $HOME/.antigen.zsh
+   source $HOME/.antigenrc
+fi
 
 # check os
 case `uname` in
@@ -16,5 +19,7 @@ esac
 ec() {
 	 emacsclient -c --alternate-editor= $@ >/dev/null 2>&1 &
 }
+
+FIRSTLOAD="LOADED"
 
 alias zshrc="source ~/.zshrc"
