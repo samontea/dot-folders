@@ -23,3 +23,6 @@ ec() {
 FIRSTLOAD="LOADED"
 
 alias zshrc="source ~/.zshrc"
+
+## allow for local overrides with a .profile file
+source $HOME/.profile
