@@ -4,3 +4,5 @@ ln -s ${PWD}/.zshrc ${HOME}/.zshrc
 ln -s ${PWD}/.antigenrc ${HOME}/.antigenrc
 ln -s ${PWD}/.tmux.conf ${HOME}/.tmux.conf
 ln -s ${PWD}/.gitconfig ${HOME}/.gitconfig
+mkdir -p ${HOME}/.git/info
+ln -s ${PWD}/dot.git/info/exclude ${HOME}/.git/info/exclude
