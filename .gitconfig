@@ -1,5 +1,6 @@
 [core]
 	editor = emacsclient -c --alternate-editor=
+	excludesfile = ~/.gitignore
 [user]
 	name = samontea
 	email = merciers.merciers@gmail.com
