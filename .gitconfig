@@ -8,3 +8,5 @@
 	default = simple
 [alias]
 	prettylog = log --graph --decorate --abbrev-commit --all --pretty=oneline
+[merge]
+	conflictstyle = diff3
