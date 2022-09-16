@@ -15,7 +15,7 @@ antigen bundle zsh-users/zsh-completions
 
 
 # Load the theme
-antigen theme gentoo
+antigen theme romkatv/powerlevel10k
 
 # Tell antigen that you're done
 antigen apply
