@@ -1,21 +1,19 @@
-# Load the oh-my-zsh's library
-antigen use oh-my-zsh
+source <(antidote init)
 
-antigen bundle git
-antigen bundle elixir
+antidote bundle ohmyzsh/ohmyzsh
+antidote bundle ohmyzsh/ohmyzsh path:plugins/git
+antidote bundle ohmyzsh/ohmyzsh path:plugins/emacs
+antidote bundle ohmyzsh/ohmyzsh path:plugins/extract
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+antidote bundle zsh-users/zsh-autosuggestions
+antidote bundle zsh-users/zsh-completions
 
-# Fish-like auto suggestions
-antigen bundle zsh-users/zsh-autosuggestions
+antidote bundle <<EOBUNDLES
+    # Bundle syntax-highlighting
+    zsh-users/zsh-syntax-highlighting
 
-# Extra zsh completions
-antigen bundle zsh-users/zsh-completions
+    # Bundle OMZ plugins using annotations
+    ohmyzsh/ohmyzsh path:plugins/magic-enter
+EOBUNDLES
 
-
-# Load the theme
-antigen theme romkatv/powerlevel10k
-
-# Tell antigen that you're done
-antigen apply
+antidote bundle romkatv/powerlevel10k

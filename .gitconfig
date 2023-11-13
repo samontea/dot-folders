@@ -1,5 +1,5 @@
 [core]
-	editor = emacsclient -c --alternate-editor=
+	editor = emacs
 	excludesfile = ~/.gitignore
 [user]
 	name = samontea

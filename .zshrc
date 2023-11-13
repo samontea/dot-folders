@@ -2,13 +2,11 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 if [ "$FIRSTLOAD" != "LOADED" ];
 then
-   source $HOME/.antigen.zsh
-   source $HOME/.antigenrc
 fi
 
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
@@ -16,6 +14,13 @@ fi
 # check os
 case `uname` in
 	Darwin)
+		if [ "$FIRSTLOAD" != "LOADED" ];
+		then
+			source /usr/local/opt/antidote/share/antidote/antidote.zsh
+		fi
+
+		# brew alias
+        alias brewski='brew update && brew upgrade && brew cleanup; brew doctor'
 		# turn colors on
 		alias ls="ls -G"
         alias tree="tree -C"
@@ -24,14 +29,21 @@ case `uname` in
 		;;
 esac
 
-# open a file in emacs client
-ec() {
-	 emacsclient -c --alternate-editor= $@
-}
+if [ "$FIRSTLOAD" != "LOADED" ];
+then
+	source ~/.antigenrc
+	antidote load
+fi
 
 FIRSTLOAD="LOADED"
 
 alias zshrc="source ~/.zshrc"
+
+# Load local files
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export GPG_TTY=$(tty)
 
 ## allow for local overrides with a .profile file
 source $HOME/.profile
