@@ -16,7 +16,7 @@ case `uname` in
 	Darwin)
 		if [ "$FIRSTLOAD" != "LOADED" ];
 		then
-			source /usr/local/opt/antidote/share/antidote/antidote.zsh
+			source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 		fi
 
 		# brew alias
